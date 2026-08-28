@@ -11,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 
 export class LoginComponent {
-  private AuthService = inject(AuthService);
+  private authService = inject(AuthService);
 
 
   loginForm = new FormGroup({
@@ -20,6 +20,17 @@ export class LoginComponent {
   });
 
   onSubmit() {
-    console.log(this.loginForm.value);
+        const email = this.loginForm.get('email')?.value;
+        const password = this.loginForm.get('password')?.value;
+
+        this.authService.login( String(email), String(password)).subscribe({
+          next: (response) => {
+            console.log('Login successful', response);
+          },
+          error: (error) => {
+            console.error('Login failed', error);
+          }
+        });
+
   }
 }
