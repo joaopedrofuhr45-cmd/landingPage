@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -16,5 +17,9 @@ export class LoginComponent {
 
   onSubmit() {
     console.log(this.loginForm.value);
+  }
+
+  Login(email: string, password: string) {
+    this.authService.login(email, password);
   }
 }

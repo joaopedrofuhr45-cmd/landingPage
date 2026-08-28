@@ -1,25 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    ```html
 <div class="login-page">
 
   <div class="login-container">
 
     <div class="login-header">
       <h1>Entrar</h1>
-      <p>Entre com suas credenciais para acessar sua conta.</p>
+
+      <p>
+        Entre com suas credenciais para acessar sua conta.
+      </p>
     </div>
 
-    <form [formGroup]="loginForm">
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
 
       <div class="form-group">
-        <label for="email">E-mail</label>
+
+        <label for="email">
+          E-mail
+        </label>
 
         <input
           type="email"
@@ -27,11 +28,15 @@
           placeholder="Digite seu e-mail"
           formControlName="email"
         />
+
       </div>
 
 
       <div class="form-group">
-        <label for="password">Senha</label>
+
+        <label for="password">
+          Senha
+        </label>
 
         <input
           type="password"
@@ -39,15 +44,20 @@
           placeholder="Digite sua senha"
           formControlName="password"
         />
+
       </div>
 
 
       <div class="login-options">
 
         <label class="remember">
+
           <input type="checkbox" />
+
           Lembrar-me
+
         </label>
+
 
         <a href="#">
           Esqueceu sua senha?
@@ -56,7 +66,10 @@
       </div>
 
 
-      <button type="submit" class="login-button">
+      <button
+        type="submit"
+        class="login-button"
+      >
         Entrar
       </button>
 
@@ -64,16 +77,17 @@
 
 
     <div class="register-link">
+
       <p>
         Não possui uma conta?
-        <a href="/cadastro">Cadastre-se</a>
+
+        <a routerLink="/cadastro">
+          Cadastre-se
+        </a>
       </p>
+
     </div>
 
   </div>
 
 </div>
-```
-
-</body>
-</html>
