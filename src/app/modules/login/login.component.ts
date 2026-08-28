@@ -1,5 +1,5 @@
 import { AuthService } from './../../service/auth.service';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
+
 export class LoginComponent {
+  private AuthService = inject(AuthService);
+
+
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
@@ -17,9 +21,5 @@ export class LoginComponent {
 
   onSubmit() {
     console.log(this.loginForm.value);
-  }
-
-  Login(email: string, password: string) {
-    this.authService.login(email, password);
   }
 }
