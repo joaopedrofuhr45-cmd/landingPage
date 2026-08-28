@@ -11,13 +11,6 @@ export class AuthService {
 
 
   login(email: string, password: string) {
-    this.http.post(`${this.apiUrl}/login`, {email, password}).subscribe(
-      (response) => {
-        console.log('Login successful', response);
-      },
-      (error) => {
-        console.error('Login failed', error);
-      }
-    );
+  return this.http.post(`${this.apiUrl}/login`, { email, password });
   }
 }
