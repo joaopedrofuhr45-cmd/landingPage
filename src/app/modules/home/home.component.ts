@@ -2,6 +2,7 @@ import { RouterLink } from '@angular/router';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { TaskServiceService } from '../../service/taskService/task-service.service';
+import { NgFor } from '@angular/common';
 interface Task {
   id: number;
   title: string;
@@ -10,7 +11,7 @@ interface Task {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, NgFor],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

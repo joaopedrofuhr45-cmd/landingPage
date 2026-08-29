@@ -113,14 +113,15 @@
     <section class="add-task">
       <label for="newTask">Adicionar nova tarefa</label>
 
-      <div class="add-task-input">
+      <form [formGroup]="taskForm" (ngSubmit)="criarTask(taskForm.value.title!)" class="add-task-input">
         <input
           id="newTask"
           type="text"
           placeholder="O que você precisa fazer?"
+          formControlName="title"
         />
-        <button class="btn-add">+</button>
-      </div>
+        <button type="submit" class="btn-add">+</button>
+      </form>
     </section>
 
 
@@ -143,76 +144,22 @@
 
       <ul class="task-list">
 
-        <li class="task-item">
-          <input type="checkbox" />
-          <div class="task-info">
-            <strong>Estudar JavaScript</strong>
-            <span class="tag tag-estudos">Estudos</span>
-          </div>
-          <div class="task-meta">
-            <span>📅 Hoje</span>
-          </div>
-          <button class="task-menu">⋮</button>
-        </li>
+        <li
+          class="task-item"
+          *ngFor="let task of tasks"
+          [class.completed]="task.completed"
+        >
+          <input
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="atualizarTask(task.id, { completed: !task.completed })"
+          />
 
-        <li class="task-item completed">
-          <input type="checkbox" checked />
           <div class="task-info">
-            <strong>Fazer exercícios de algoritmos</strong>
-            <span class="tag tag-estudos">Estudos</span>
+            <strong>{{ task.title }}</strong>
           </div>
-          <div class="task-meta">
-            <span class="status-done">✓ Concluída</span>
-          </div>
-          <button class="task-menu">⋮</button>
-        </li>
 
-        <li class="task-item">
-          <input type="checkbox" />
-          <div class="task-info">
-            <strong>Projeto pessoal - Todo List</strong>
-            <span class="tag tag-projetos">Projetos</span>
-          </div>
-          <div class="task-meta">
-            <span>📅 Amanhã</span>
-          </div>
-          <button class="task-menu">⋮</button>
-        </li>
-
-        <li class="task-item">
-          <input type="checkbox" />
-          <div class="task-info">
-            <strong>Ler capítulo do livro</strong>
-            <span class="tag tag-leitura">Leitura</span>
-          </div>
-          <div class="task-meta">
-            <span>📅 25/06/2025</span>
-          </div>
-          <button class="task-menu">⋮</button>
-        </li>
-
-        <li class="task-item">
-          <input type="checkbox" />
-          <div class="task-info">
-            <strong>Reunião com o time</strong>
-            <span class="tag tag-trabalho">Trabalho</span>
-          </div>
-          <div class="task-meta">
-            <span>📅 26/06/2025 às 10:00</span>
-          </div>
-          <button class="task-menu">⋮</button>
-        </li>
-
-        <li class="task-item">
-          <input type="checkbox" />
-          <div class="task-info">
-            <strong>Comprar leite</strong>
-            <span class="tag tag-pessoal">Pessoal</span>
-          </div>
-          <div class="task-meta">
-            <span class="status-late">⚠ Atrasada</span>
-          </div>
-          <button class="task-menu">⋮</button>
+          <button class="task-menu" (click)="deleteTask(task.id)">🗑</button>
         </li>
 
       </ul>
