@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
-import { inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
+  AbstractControl,
   FormBuilder,
-  FormControl,
-  FormGroup,
   ReactiveFormsModule,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
 } from '@angular/forms';
 import { CadastroService } from '../../service/cadastro/cadastro.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+
+function senhasIguaisValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const senha = control.get('password')?.value;
+    const confirmacao = control.get('passwordConfirmation')?.value;
+    return senha === confirmacao ? null : { senhasDiferentes: true };
+  };
+}
+
 @Component({
   selector: 'app-cadastro',
   standalone: true,
@@ -18,41 +28,46 @@ import { RouterLink } from '@angular/router';
 export class CadastroComponent {
   private cadastroService = inject(CadastroService);
   private fb = inject(FormBuilder);
+  private router = inject(Router);
 
   isLoading = false;
+  errorMessage: string | null = null;
 
-  registerForm = this.fb.group({
-    name: [''],
-    email: [''],
-    password: [''],
-    passwordConfirmation: [''],
-  });
+  registerForm = this.fb.group(
+    {
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      passwordConfirmation: ['', Validators.required],
+    },
+    { validators: senhasIguaisValidator() }
+  );
 
   onSubmit() {
-    const name = this.registerForm.get('name')?.value;
-    const email = this.registerForm.get('email')?.value;
-    const password = this.registerForm.get('password')?.value;
-    const passwordConfirmation = this.registerForm.get(
-      'passwordConfirmation',
-    )?.value;
+    if (this.registerForm.invalid) {
+      this.errorMessage = this.registerForm.errors?.['senhasDiferentes']
+        ? 'As senhas não coincidem'
+        : 'Preencha todos os campos corretamente';
+      return;
+    }
 
+    this.errorMessage = null;
     this.isLoading = true;
 
+    const { name, email, password, passwordConfirmation } = this.registerForm.value;
+
     this.cadastroService
-      .cadastro(
-        String(name),
-        String(email),
-        String(password),
-        String(passwordConfirmation),
-      )
+      .cadastro(name!, email!, password!, passwordConfirmation!)
       .subscribe({
-        next: (response) => {
-          console.log('Cadastro successful', response);
+        next: () => {
           this.isLoading = false;
+          this.router.navigate(['/login']);
         },
         error: (error) => {
-          console.error('Cadastro failed', error);
           this.isLoading = false;
+          this.errorMessage = error.status === 409
+            ? 'Esse email já está em uso'
+            : 'Erro ao cadastrar, tente novamente';
         },
       });
   }

@@ -64,6 +64,10 @@
           Preencha os dados abaixo para criar sua conta.
         </p>
 
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <!-- Nome -->
           <div class="input-group">
