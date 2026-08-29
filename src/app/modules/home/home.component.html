@@ -1,0 +1,242 @@
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-logo">
+      <span class="logo-icon">✓</span>
+      <span>TodoList</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        Início
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📋</span>
+        Tarefas
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📅</span>
+        Calendário
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🔖</span>
+        Prioridades
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🗂</span>
+        Categorias
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🗑</span>
+        Lixeira
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🌙</span>
+        Tema escuro
+      </a>
+
+      <div class="user-info">
+        <div class="user-avatar">JP</div>
+        <span>João Pedro</span>
+      </div>
+    </div>
+
+  </aside>
+
+
+  <!-- CONTEÚDO -->
+  <main class="content">
+
+    <!-- TOPO -->
+    <header class="topbar">
+      <div>
+        <h1>Olá, João! 👋</h1>
+        <p>Vamos organizar suas tarefas de hoje.</p>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="icon-button">🔍</button>
+        <button class="icon-button notification">🔔</button>
+      </div>
+    </header>
+
+
+    <!-- CARDS DE ESTATÍSTICA -->
+    <section class="stats">
+
+      <div class="stat-card">
+        <div class="stat-icon purple">📋</div>
+        <div class="stat-info">
+          <strong>12</strong>
+          <span>Total de tarefas</span>
+          <small>Todas as suas tarefas</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon blue">✓</div>
+        <div class="stat-info">
+          <strong>5</strong>
+          <span>Concluídas</span>
+          <small>Ótimo trabalho!</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange">🕐</div>
+        <div class="stat-info">
+          <strong>4</strong>
+          <span>Pendentes</span>
+          <small>Em andamento</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon red">⚠</div>
+        <div class="stat-info">
+          <strong>3</strong>
+          <span>Atrasadas</span>
+          <small>Precisa de atenção</small>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ADICIONAR TAREFA -->
+    <section class="add-task">
+      <label for="newTask">Adicionar nova tarefa</label>
+
+      <div class="add-task-input">
+        <input
+          id="newTask"
+          type="text"
+          placeholder="O que você precisa fazer?"
+        />
+        <button class="btn-add">+</button>
+      </div>
+    </section>
+
+
+    <!-- LISTA DE TAREFAS -->
+    <section class="task-list-section">
+
+      <div class="task-list-header">
+        <h2>Minhas tarefas</h2>
+
+        <div class="filter">
+          <span>Filtrar:</span>
+          <select>
+            <option>Todas</option>
+            <option>Pendentes</option>
+            <option>Concluídas</option>
+            <option>Atrasadas</option>
+          </select>
+        </div>
+      </div>
+
+      <ul class="task-list">
+
+        <li class="task-item">
+          <input type="checkbox" />
+          <div class="task-info">
+            <strong>Estudar JavaScript</strong>
+            <span class="tag tag-estudos">Estudos</span>
+          </div>
+          <div class="task-meta">
+            <span>📅 Hoje</span>
+          </div>
+          <button class="task-menu">⋮</button>
+        </li>
+
+        <li class="task-item completed">
+          <input type="checkbox" checked />
+          <div class="task-info">
+            <strong>Fazer exercícios de algoritmos</strong>
+            <span class="tag tag-estudos">Estudos</span>
+          </div>
+          <div class="task-meta">
+            <span class="status-done">✓ Concluída</span>
+          </div>
+          <button class="task-menu">⋮</button>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" />
+          <div class="task-info">
+            <strong>Projeto pessoal - Todo List</strong>
+            <span class="tag tag-projetos">Projetos</span>
+          </div>
+          <div class="task-meta">
+            <span>📅 Amanhã</span>
+          </div>
+          <button class="task-menu">⋮</button>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" />
+          <div class="task-info">
+            <strong>Ler capítulo do livro</strong>
+            <span class="tag tag-leitura">Leitura</span>
+          </div>
+          <div class="task-meta">
+            <span>📅 25/06/2025</span>
+          </div>
+          <button class="task-menu">⋮</button>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" />
+          <div class="task-info">
+            <strong>Reunião com o time</strong>
+            <span class="tag tag-trabalho">Trabalho</span>
+          </div>
+          <div class="task-meta">
+            <span>📅 26/06/2025 às 10:00</span>
+          </div>
+          <button class="task-menu">⋮</button>
+        </li>
+
+        <li class="task-item">
+          <input type="checkbox" />
+          <div class="task-info">
+            <strong>Comprar leite</strong>
+            <span class="tag tag-pessoal">Pessoal</span>
+          </div>
+          <div class="task-meta">
+            <span class="status-late">⚠ Atrasada</span>
+          </div>
+          <button class="task-menu">⋮</button>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- CARD DE MOTIVAÇÃO -->
+    <section class="motivation-card">
+
+      <div class="motivation-text">
+        <span class="motivation-icon">🌱</span>
+        <div>
+          <strong>Mantenha o foco!</strong>
+          <p>Pequenas ações todos os dias levam a grandes conquistas.</p>
+        </div>
+      </div>
+
+      <div class="progress-circle">
+        <span>72%</span>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
