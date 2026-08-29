@@ -1,8 +1,6 @@
 <div class="dashboard">
-
   <!-- SIDEBAR -->
   <aside class="sidebar">
-
     <div class="sidebar-logo">
       <span class="logo-icon">✓</span>
       <span>TodoList</span>
@@ -46,13 +44,10 @@
         <span>João Pedro</span>
       </div>
     </div>
-
   </aside>
-
 
   <!-- CONTEÚDO -->
   <main class="content">
-
     <!-- TOPO -->
     <header class="topbar">
       <div>
@@ -64,12 +59,14 @@
         <button class="icon-button">🔍</button>
         <button class="icon-button notification">🔔</button>
       </div>
-    </header>
 
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </header>
 
     <!-- CARDS DE ESTATÍSTICA -->
     <section class="stats">
-
       <div class="stat-card">
         <div class="stat-icon purple">📋</div>
         <div class="stat-info">
@@ -105,15 +102,17 @@
           <small>Precisa de atenção</small>
         </div>
       </div>
-
     </section>
-
 
     <!-- ADICIONAR TAREFA -->
     <section class="add-task">
       <label for="newTask">Adicionar nova tarefa</label>
 
-      <form [formGroup]="taskForm" (ngSubmit)="criarTask(taskForm.value.title!)" class="add-task-input">
+      <form
+        [formGroup]="taskForm"
+        (ngSubmit)="criarTask(taskForm.value.title!)"
+        class="add-task-input"
+      >
         <input
           id="newTask"
           type="text"
@@ -124,10 +123,8 @@
       </form>
     </section>
 
-
     <!-- LISTA DE TAREFAS -->
     <section class="task-list-section">
-
       <div class="task-list-header">
         <h2>Minhas tarefas</h2>
 
@@ -143,7 +140,6 @@
       </div>
 
       <ul class="task-list">
-
         <li
           class="task-item"
           *ngFor="let task of tasks"
@@ -161,15 +157,11 @@
 
           <button class="task-menu" (click)="deleteTask(task.id)">🗑</button>
         </li>
-
       </ul>
-
     </section>
-
 
     <!-- CARD DE MOTIVAÇÃO -->
     <section class="motivation-card">
-
       <div class="motivation-text">
         <span class="motivation-icon">🌱</span>
         <div>
@@ -181,9 +173,6 @@
       <div class="progress-circle">
         <span>72%</span>
       </div>
-
     </section>
-
   </main>
-
 </div>

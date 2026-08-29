@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { CadastroService } from '../../service/cadastro/cadastro.service';
 import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 function senhasIguaisValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -21,7 +22,7 @@ function senhasIguaisValidator(): ValidatorFn {
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, CommonModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css',
 })
