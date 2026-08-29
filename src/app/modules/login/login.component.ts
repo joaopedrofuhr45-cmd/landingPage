@@ -1,5 +1,5 @@
 import { AuthService } from '../../service/auth/auth.service';
-import { AuthStateService } from '../../service/auth/auth-state.service';
+import { AuthStateService } from '../../service/auth/auth-state/auth-state.service';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';

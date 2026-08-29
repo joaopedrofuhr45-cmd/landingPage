@@ -1,4 +1,4 @@
-import { AuthStateService } from './service/auth/auth-state.service';
+import { AuthStateService } from './service/auth/auth-state/auth-state.service';
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from './service/auth/auth.service';
