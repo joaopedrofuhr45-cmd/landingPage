@@ -1,0 +1,547 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-page {
+  min-height: 100vh;
+  background: #0b0a12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 650px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: #0f0e17;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+
+/* =========================
+   LADO ESQUERDO
+========================= */
+
+.welcome-section {
+  position: relative;
+  padding: 65px 55px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(108, 54, 220, 0.25),
+      transparent 40%
+    ),
+    #0c0a19;
+
+  overflow: hidden;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #7b3ff2,
+    #5b22d9
+  );
+
+  border-radius: 6px;
+
+  font-size: 20px;
+}
+
+.welcome-content {
+  margin-top: 70px;
+  max-width: 400px;
+}
+
+.welcome-content h1 {
+  margin: 0 0 10px;
+
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.welcome-content h2 {
+  margin: 0;
+
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.welcome-content h2 span {
+  color: #874cff;
+}
+
+.welcome-content p {
+  margin-top: 25px;
+
+  color: #a9a6b5;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   ILUSTRAÇÃO
+========================= */
+
+.illustration {
+  position: absolute;
+
+  left: 80px;
+  bottom: 45px;
+
+  width: 360px;
+  height: 230px;
+}
+
+.clipboard {
+  position: absolute;
+
+  left: 50px;
+  bottom: 10px;
+
+  width: 175px;
+  height: 205px;
+
+  background: #19182a;
+
+  border: 2px solid #292640;
+
+  border-radius: 15px;
+
+  transform: rotate(5deg);
+
+  padding: 45px 20px 20px;
+}
+
+.clip {
+  position: absolute;
+
+  top: -18px;
+  left: 55px;
+
+  width: 70px;
+  height: 35px;
+
+  background: #6f37df;
+
+  border-radius: 7px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+}
+
+.check,
+.empty-check {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check {
+  background: #7139e8;
+
+  font-size: 15px;
+}
+
+.empty-check {
+  border: 3px solid #77748b;
+}
+
+.task div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task div span:first-child {
+  width: 70px;
+  height: 7px;
+
+  background: #77718f;
+
+  border-radius: 10px;
+}
+
+.task div span:last-child {
+  width: 45px;
+  height: 6px;
+
+  background: #4f4a64;
+
+  border-radius: 10px;
+}
+
+
+/* Relógio */
+
+.clock {
+  position: absolute;
+
+  right: 35px;
+  bottom: 0;
+
+  width: 95px;
+  height: 95px;
+
+  border-radius: 50%;
+
+  background: #a89df4;
+
+  border: 8px solid #6930d9;
+
+  box-shadow: 0 0 30px rgba(105, 48, 217, 0.4);
+}
+
+.clock-hand {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 3px;
+
+  background: #3b315b;
+
+  transform-origin: bottom;
+}
+
+.hour {
+  height: 25px;
+  transform: translate(-50%, -100%) rotate(35deg);
+}
+
+.minute {
+  height: 32px;
+  transform: translate(-50%, -100%) rotate(120deg);
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 390px;
+}
+
+.form-container h1 {
+  margin: 0;
+
+  font-size: 30px;
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 35px;
+
+  color: #9693a2;
+
+  font-size: 14px;
+}
+
+
+/* Inputs */
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 45px;
+
+  background: #171621;
+
+  border: 1px solid #292736;
+
+  border-radius: 7px;
+
+  outline: none;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.input-wrapper input::placeholder {
+  color: #777484;
+}
+
+.input-wrapper input:focus {
+  border-color: #7139e8;
+}
+
+.input-icon {
+  position: absolute;
+
+  left: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #858191;
+}
+
+.password-icon {
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #858191;
+
+  cursor: pointer;
+}
+
+
+/* Opções */
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 5px 0 25px;
+
+  font-size: 12px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #a5a2b0;
+}
+
+.remember input {
+  accent-color: #7139e8;
+}
+
+.form-options a,
+.register-text a {
+  color: #8952ed;
+
+  text-decoration: none;
+}
+
+.form-options a:hover,
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* Botão login */
+
+.login-button {
+  width: 100%;
+  height: 43px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #6933df,
+    #773ce9
+  );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+
+  filter: brightness(1.1);
+}
+
+
+/* Separador */
+
+.divider {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 25px 0;
+}
+
+.divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #292736;
+}
+
+.divider p {
+  margin: 0;
+
+  color: #777484;
+
+  font-size: 12px;
+}
+
+
+/* Google */
+
+.google-button {
+  width: 100%;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  background: transparent;
+
+  border: 1px solid #302d3e;
+
+  border-radius: 6px;
+
+  color: #d8d6df;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.google-button:hover {
+  background: #171621;
+}
+
+.google-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Cadastro */
+
+.register-text {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: #888593;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 850px) {
+
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-section {
+    display: none;
+  }
+
+  .form-section {
+    padding: 40px 25px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .login-page {
+    padding: 15px;
+  }
+
+  .login-container {
+    min-height: auto;
+  }
+
+  .form-section {
+    padding: 35px 20px;
+  }
+
+}

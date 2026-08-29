@@ -1,0 +1,161 @@
+<div class="login-page">
+
+  <div class="login-container">
+
+    <!-- Lado esquerdo -->
+    <section class="welcome-section">
+
+      <div class="logo">
+        <span class="logo-icon">✓</span>
+        <span>Todo-list</span>
+      </div>
+
+      <div class="welcome-content">
+        <h1>Bem-vindo de volta!</h1>
+
+        <h2>
+          Foque no que <span>realmente importa.</span>
+        </h2>
+
+        <p>
+          Faça login e continue organizando suas
+          tarefas de forma simples e eficiente.
+        </p>
+      </div>
+
+      <div class="illustration">
+        <div class="clipboard">
+          <div class="clip"></div>
+
+          <div class="task">
+            <span class="check">✓</span>
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="task">
+            <span class="check">✓</span>
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="task">
+            <span class="empty-check"></span>
+            <div>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clock">
+          <div class="clock-hand hour"></div>
+          <div class="clock-hand minute"></div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Lado direito -->
+    <section class="form-section">
+
+      <div class="form-container">
+
+        <h1>Entrar</h1>
+
+        <p class="description">
+          Entre com suas credenciais para acessar sua conta.
+        </p>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <!-- E-mail -->
+          <div class="input-group">
+            <label for="email">E-mail</label>
+
+            <div class="input-wrapper">
+              <span class="input-icon">✉</span>
+
+              <input
+                id="email"
+                type="email"
+                placeholder="Digite seu e-mail"
+                formControlName="email"
+              >
+            </div>
+          </div>
+
+
+          <!-- Senha -->
+          <div class="input-group">
+            <label for="password">Senha</label>
+
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+
+              <input
+                id="password"
+                type="password"
+                placeholder="Digite sua senha"
+                formControlName="password"
+              >
+
+              <span class="password-icon">◉</span>
+            </div>
+          </div>
+
+
+          <!-- Lembrar / Esqueci -->
+          <div class="form-options">
+
+            <label class="remember">
+              <input type="checkbox">
+              <span>Lembrar-me</span>
+            </label>
+
+            <a href="#">Esqueceu sua senha?</a>
+
+          </div>
+
+
+          <!-- Botão -->
+          <button type="submit" class="login-button">
+            Entrar
+          </button>
+
+
+          <!-- Separador -->
+          <div class="divider">
+            <span></span>
+            <p>ou</p>
+            <span></span>
+          </div>
+
+
+          <!-- Google -->
+          <button type="button" class="google-button">
+            <span class="google-icon">G</span>
+            Entrar com Google
+          </button>
+
+
+          <!-- Cadastro -->
+          <p class="register-text">
+            Não tem uma conta?
+            <a href="#">Cadastre-se</a>
+          </p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
