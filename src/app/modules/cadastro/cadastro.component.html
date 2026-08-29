@@ -11,14 +11,14 @@
       </div>
 
       <div class="welcome-content">
-        <h1>Bem-vindo de volta!</h1>
+        <h1>Comece agora!</h1>
 
         <h2>
           Foque no que <span>realmente importa.</span>
         </h2>
 
         <p>
-          Faça login e continue organizando suas
+          Crie sua conta e organize suas
           tarefas de forma simples e eficiente.
         </p>
       </div>
@@ -66,13 +66,34 @@
 
       <div class="form-container">
 
-        <h1>Entrar</h1>
+        <a routerLink="/inicio" class="back-link">
+          ← Voltar para o início
+        </a>
+
+        <h1>Criar conta</h1>
 
         <p class="description">
-          Entre com suas credenciais para acessar sua conta.
+          Preencha os dados abaixo para criar sua conta.
         </p>
 
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <!-- Nome -->
+          <div class="input-group">
+            <label for="name">Nome</label>
+
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+
+              <input
+                id="name"
+                type="text"
+                placeholder="Digite seu nome"
+                formControlName="name"
+              >
+            </div>
+          </div>
+
 
           <!-- E-mail -->
           <div class="input-group">
@@ -104,50 +125,37 @@
                 placeholder="Digite sua senha"
                 formControlName="password"
               >
-
-              <span class="password-icon">◉</span>
             </div>
           </div>
 
 
-          <!-- Lembrar / Esqueci -->
-          <div class="form-options">
+          <!-- Confirmar senha -->
+          <div class="input-group">
+            <label for="passwordConfirmation">Confirmar senha</label>
 
-            <label class="remember">
-              <input type="checkbox">
-              <span>Lembrar-me</span>
-            </label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
 
-            <a href="#">Esqueceu sua senha?</a>
-
+              <input
+                id="passwordConfirmation"
+                type="password"
+                placeholder="Digite sua senha novamente"
+                formControlName="passwordConfirmation"
+              >
+            </div>
           </div>
 
 
           <!-- Botão -->
           <button type="submit" class="login-button">
-            Entrar
+            Cadastrar
           </button>
 
 
-          <!-- Separador -->
-          <div class="divider">
-            <span></span>
-            <p>ou</p>
-            <span></span>
-          </div>
-
-
-          <!-- Google -->
-          <button type="button" class="google-button">
-            <span class="google-icon">G</span>
-            Entrar com Google
-          </button>
-
-
-          <!-- Cadastro -->
+          <!-- Já tem conta -->
           <p class="register-text">
-            Não tem uma conta?
-            <a href="#">Cadastre-se</a>
+            Já tem uma conta?
+            <a routerLink="/login">Entrar</a>
           </p>
 
         </form>

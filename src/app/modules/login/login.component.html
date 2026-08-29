@@ -2,6 +2,10 @@
 
   <div class="login-container">
 
+    <a routerLink="/inicio" class="back-link">
+      ← Voltar para o início
+    </a>
+
     <div class="login-header">
       <h1>Entrar</h1>
 
@@ -69,8 +73,9 @@
       <button
         type="submit"
         class="login-button"
+        [disabled]="isLoading"
       >
-        Entrar
+        {{ isLoading ? 'Entrando...' : 'Entrar' }}
       </button>
 
     </form>

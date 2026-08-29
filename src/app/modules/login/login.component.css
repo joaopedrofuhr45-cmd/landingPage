@@ -279,3 +279,20 @@
     gap: 15px;
   }
 }
+.back-link {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: #8b5cf6;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.back-link:hover {
+  color: #a78bfa;
+}

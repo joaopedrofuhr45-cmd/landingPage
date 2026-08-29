@@ -545,3 +545,21 @@
   }
 
 }
+
+.back-link {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: #8952ed;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
