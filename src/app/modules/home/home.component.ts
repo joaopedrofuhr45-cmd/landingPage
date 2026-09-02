@@ -1,16 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { TaskServiceService } from '../../service/taskService/task-service.service';
-import { CommonModule, NgFor } from '@angular/common';
-interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import { CommonModule} from '@angular/common';
+import { Task } from '../../models/task';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
