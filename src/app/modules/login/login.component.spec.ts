@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { describe, beforeEach, it, expect } from 'vitest';
 
 import { LoginComponent } from './login.component';
 
@@ -11,6 +10,7 @@ describe('LoginComponent', () => {
     await TestBed.configureTestingModule({
       imports: [LoginComponent]
     })
+    
     .compileComponents();
     
     fixture = TestBed.createComponent(LoginComponent);
