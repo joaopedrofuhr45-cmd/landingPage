@@ -31,4 +31,12 @@ describe('AuthService', () => {
 
     req.flush(undefined); // simula a resposta do "backend"
   });
+
+
+  it('deve iniciar deslogado', ()=>{
+  service.setLoggedIn(true);
+    service.setLoggedIn(false);
+    expect(service.isLoggedIn()).toBeFalse();
+
+  })
 });
