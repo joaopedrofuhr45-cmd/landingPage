@@ -1,30 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
-import { provideRouter } from '@angular/router';
-import { HomeComponent } from '../../modules/home/home.component';
 
+import { TaskServiceService } from './task-service.service';
 
-describe('HomeComponent', ( ) => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('TaskServiceService', () => {
+  let service: TaskServiceService;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HomeComponent],
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       providers: [
         provideHttpClient(),
-        provideHttpClientTesting(),
-        provideRouter([])
+        provideHttpClientTesting()
       ]
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    });
+    service = TestBed.inject(TaskServiceService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be created', () => {
+    expect(service).toBeTruthy();
   });
 });
