@@ -12,7 +12,10 @@ export const routes: Routes = [
   {
     path: '',
     component: PublicLayoutComponent,
-    children: [{ path: 'inicio', component: InicioComponent }],
+    children: [
+      { path: 'inicio', component: InicioComponent },
+      { path: 'home', component: HomeComponent, canActivate: [authGuard] },
+    ],
   },
   {
     path: '',
@@ -22,5 +25,4 @@ export const routes: Routes = [
       { path: 'cadastro', component: CadastroComponent },
     ],
   },
-  { path: 'home', component: HomeComponent, canActivate: [authGuard] },
 ];
