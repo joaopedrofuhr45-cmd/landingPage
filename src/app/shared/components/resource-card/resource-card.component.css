@@ -1,0 +1,38 @@
+.resource-card {
+  padding: 35px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  border-color: #493d67;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.resource-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--primary-light);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}

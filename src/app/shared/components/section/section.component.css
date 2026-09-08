@@ -1,0 +1,59 @@
+.section {
+  padding: 110px 7%;
+}
+
+.about {
+  background: var(--background-secondary);
+}
+
+.section-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--primary-light);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+:host ::ng-deep .section-content p {
+  margin-bottom: 15px;
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.contact {
+  background: var(--background-secondary);
+  text-align: center;
+}
+
+.contact .section-content {
+  max-width: 750px;
+  padding: 60px 40px;
+  background: radial-gradient(circle at center, rgba(124, 58, 237, 0.15), transparent 65%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 80px 5%;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}

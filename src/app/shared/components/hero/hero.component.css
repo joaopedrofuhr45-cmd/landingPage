@@ -1,0 +1,125 @@
+.hero {
+  min-height: 680px;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  background: radial-gradient(circle at 80% 40%, rgba(124, 58, 237, 0.15), transparent 35%);
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 7px 15px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--primary-light);
+  font-size: 14px;
+}
+
+.hero h1 {
+  margin-bottom: 25px;
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--primary-light);
+}
+
+.hero-content > p {
+  max-width: 580px;
+  margin-bottom: 35px;
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-buttons .btn-outline {
+  text-decoration: none;
+}
+
+.hero-card {
+  width: 480px;
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid #38334e;
+  border-radius: 16px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.4), 0 0 70px rgba(124, 58, 237, 0.12);
+}
+
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.hero-card-header h2 {
+  font-size: 22px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    padding: 80px 5%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content > p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 550px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 70px 5%;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-content > p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+<header class="header">
+  <a routerLink="/inicio" fragment="inicio" class="logo">Todo-list</a>
+
+  <nav class="navbar" aria-label="Navegação principal">
+    <a routerLink="/inicio" fragment="inicio">Início</a>
+    <a routerLink="/inicio" fragment="sobre">Sobre nós</a>
+    <a routerLink="/inicio" fragment="recursos">Recursos</a>
+    <a routerLink="/inicio" fragment="contato">Contato</a>
+  </nav>
+
+  <div class="header-buttons">
+    <app-button variant="outline" [routerLink]="['/login']">Entrar</app-button>
+    <app-button [routerLink]="['/cadastro']">Cadastrar</app-button>
+  </div>
+</header>
